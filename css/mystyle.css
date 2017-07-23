@@ -1,0 +1,65 @@
+@charset: "utf-8";
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    min-width: 100px;
+    width: 80%;
+}
+
+#the_title {
+    text-align: center;
+    width: 100%；
+}
+
+#the_title input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 20px;
+    outline: none;
+    padding: 10px 5px;
+    width: 500px;
+}
+
+#list {
+    margin: 0 auto;
+    width: 510px;
+}
+
+#list ul {
+    padding: 0;
+}
+
+#list ul li {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#list ul li:hover {
+    cursor: pointer;
+}
+
+#list ul li:hover .right {
+    color: red;
+}
+
+.finished {
+    color: #ccc;
+}
+
+.right {
+    color: white;
+    float: right;
+}

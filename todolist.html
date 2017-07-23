@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>vue test</title>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="the_title">
+            <h1 v-text="message"></h1>
+            <input type="text" v-model="newItem" @keyup.enter="add">
+        </div>
+        <div id="list">
+            <ul>
+                <li v-for="todo in todos" :class="{finished: todo.isFinished}" v-if="todo.isHidden"><span @click="changestate(todo)">{{todo.contents}}</span><span :class="right" @click="delete_list(todo)">X</span></li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script src="js/method.js"></script>
+</body>
+
+</html>
+
