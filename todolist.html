@@ -15,7 +15,7 @@
         </div>
         <div id="list">
             <ul>
-                <li v-for="todo in todos" :class="{finished: todo.isFinished}" v-if="todo.isHidden"><span @click="changestate(todo)">{{todo.contents}}</span><span :class="right" @click="delete_list(todo)">X</span></li>
+                <li v-for="(todo, index) in todos" :class="{finished: todo.isFinished}"><span @click="changestate(todo)">{{todo.contents}}</span><span :class="right" @click="delete_list(index)">X</span></li>
             </ul>
         </div>
     </div>

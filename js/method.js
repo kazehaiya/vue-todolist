@@ -11,8 +11,7 @@ var title = new Vue({
             if (content.length > 0 && typeof content == "string") {
                 list.todos.push({
                     contents: content,
-                    isFinished: false,
-                    isHidden: true
+                    isFinished: false
                 });
                 this.newItem = "";
             }
@@ -24,18 +23,14 @@ var list = new Vue({
     el: "#list",
     data: {
         right: "right",
-        todos: [{
-            contents: "example list",
-            isFinished: false,
-            isHidden: true
-        }]
+        todos: []
     },
     methods: {
         changestate: function(pos) {
             pos.isFinished = !pos.isFinished;
         },
         delete_list: function(pos) {
-            pos.isHidden = !pos.isHidden;
+            this.todos.splice(pos, 1);
         },
         toogleSeen: function(pos) {
             pos.isHidden = !pos.isHidden;
