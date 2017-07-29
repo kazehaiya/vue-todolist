@@ -1,15 +1,6 @@
 var STORE_NAME = "listItem";
 var storage = window.localStorage;
 
-var Store = {
-    getListItems: function() {
-        return JSON.parse(storage.getItem(STORE_NAME) || '[]');
-    },
-    setListItems: function(todos) {
-        return storage.setItem(STORE_NAME,JSON.stringify(todos));
-    }
-};
-
 var title = new Vue({
     el: "#the_title",
     data: {
@@ -35,7 +26,10 @@ var list = new Vue({
     el: "#list",
     data: {
         right: "right",
-        todos: Store.getListItems()
+        todos: []
+    },
+    mounted: function () {
+        this.getList();
     },
     methods: {
         changestate: function(pos) {
@@ -47,11 +41,17 @@ var list = new Vue({
         toogleSeen: function(pos) {
             pos.isHidden = !pos.isHidden;
         },
+        getList: function(){
+            this.todos = JSON.parse(storage.getItem(STORE_NAME) || '[]');
+        },
+        setList: function() {
+            storage.setItem(STORE_NAME,JSON.stringify(this.todos));
+        }
     },
     watch: {
         todos: {
             handler: function(){
-                Store.setListItems(this.todos);
+                this.setList();
             },
             deep: true
         }
