@@ -14,3 +14,4 @@ I'm a beginner to Vue, and just try to use what I have learned in Vue.
 1. 删除方法
     之前网上查的$index获取todo的位置，发现报错，今天查了下vue2的更改部分，发现$index和$key被移除了，于是改变了删除方法(todo, index) in todos ==> 来获取index值，从而用splice删除数组对应位置的值。
 
+2. 添加LocalStorage方法存储内容
